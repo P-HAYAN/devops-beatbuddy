@@ -6,7 +6,4 @@ dist
 
 .vscode
 
-.env
-.env.*
-
 *.log
