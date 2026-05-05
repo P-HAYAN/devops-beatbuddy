@@ -1,0 +1,15 @@
+.gradle
+build
+out
+
+.git
+.gitignore
+
+.idea
+.vscode
+
+uploads
+
+src/main/resources/application-secret.yml
+
+*.log
