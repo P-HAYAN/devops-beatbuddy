@@ -1,0 +1,71 @@
+version: "3.8"
+
+services:
+  # =============
+  # MariaDB
+  # =============
+  mariadb:
+    image: mariadb:10.11
+    container_name: beatbuddy-mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: beatbuddy
+      MYSQL_USER: beyond
+      MYSQL_PASSWORD: beyond
+    ports:
+      - "3307:3306" # 로컬 3307 -> 컨테이너 3306
+    volumes:
+      - mariadb-data:/var/lib/mysql
+
+  # =============
+  # Redis
+  # =============
+  redis:
+    image: redis:7
+    container_name: beatbuddy-redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  # =============
+  # Backend
+  # =============
+  backend:
+    image: beatbuddy-backend:dev
+    container_name: beatbuddy-backend
+    restart: always
+    depends_on:
+      - mariadb
+      - redis
+    ports:
+      - "18080:8080"
+    environment:
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_NAME: beatbuddy
+      DB_USERNAME: beyond
+      DB_PASSWORD: beyond
+
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+      SPRING_CONFIG_IMPORT: "optional:file:/app/application-secret.yml"
+
+    volumes:
+      - ./backend/src/main/resources/application-secret.yml:/app/application-secret.yml
+
+  # =============
+  # Frontend
+  # =============
+  frontend:
+    image: beatbuddy-frontend:dev
+    container_name: beatbuddy-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  mariadb-data:
