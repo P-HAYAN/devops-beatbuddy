@@ -63,6 +63,7 @@ spec:
                     /kaniko/executor \
                       --context=${WORKSPACE}/frontend \
                       --dockerfile=${WORKSPACE}/frontend/Dockerfile \
+                      --build-arg VITE_API_BASE_URL=http://localhost:31080 \
                       --destination=whiteyan/beatbuddy-frontend:dev
                     '''
                 }
