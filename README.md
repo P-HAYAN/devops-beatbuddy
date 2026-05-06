@@ -78,10 +78,6 @@
 
 > [API 명세서](https://www.notion.so/5-API-f76901cdc00882208183014b29afe442?source=copy_link)
 
-
-
----
-
 ---
 
 ## 🧪 테스트 계획 및 결과 보고서
