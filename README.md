@@ -16,27 +16,23 @@
 
 ### 👥 팀원
 
-<table style="border-collapse: collapse; width: 100%; text-align: center;">
-  <thead>
-    <tr>
-      <th style="border: 1px solid #ccc; padding: 12px; width: 16.6%;">채팅(팀장)</th>
-      <th style="border: 1px solid #ccc; padding: 12px; width: 16.6%;">음악</th>
-      <th style="border: 1px solid #ccc; padding: 12px; width: 16.6%;">인증</th>
-      <th style="border: 1px solid #ccc; padding: 12px; width: 16.6%;">친구</th>
-      <th style="border: 1px solid #ccc; padding: 12px; width: 16.6%;">마이페이지</th>
-      <th style="border: 1px solid #ccc; padding: 12px; width: 16.6%;">그룹</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="border: 1px solid #ccc; padding: 12px;">김예지</td>
-      <td style="border: 1px solid #ccc; padding: 12px;">박하얀</td>
-      <td style="border: 1px solid #ccc; padding: 12px;">방지혁</td>
-      <td style="border: 1px solid #ccc; padding: 12px;">이다윗</td>
-      <td style="border: 1px solid #ccc; padding: 12px;">허진호</td>
-      <td style="border: 1px solid #ccc; padding: 12px;">황희수</td>
-    </tr>
-  </tbody>
+<table>
+  <tr align="center">
+    <th width="150">채팅(팀장)</th>
+    <th width="150">음악</th>
+    <th width="150">인증</th>
+    <th width="150">친구</th>
+    <th width="150">마이페이지</th>
+    <th width="150">그룹</th>
+  </tr>
+  <tr align="center">
+    <td>김예지</td>
+    <td>박하얀</td>
+    <td>방지혁</td>
+    <td>이다윗</td>
+    <td>허진호</td>
+    <td>황희수</td>
+  </tr>
 </table>
 
 ## 📌 프로젝트 개요
