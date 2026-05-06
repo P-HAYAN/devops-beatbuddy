@@ -18,11 +18,13 @@ spec:
         app: backend
 
     spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
+        
       containers:
         - name: backend
-          image: beatbuddy-backend:dev
-
-          imagePullPolicy: Never
+          image: whiteyan/beatbuddy-backend:dev
+          imagePullPolicy: Always
 
           ports:
             - containerPort: 8080
