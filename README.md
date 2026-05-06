@@ -18,20 +18,20 @@
 
 <table>
   <tr align="center">
-    <th width="90" style="padding: 10px;">채팅(팀장)</th>
-    <th width="90" style="padding: 10px;">음악</th>
-    <th width="90" style="padding: 10px;">인증</th>
-    <th width="90" style="padding: 10px;">친구</th>
-    <th width="90" style="padding: 10px;">마이페이지</th>
-    <th width="90" style="padding: 10px;">그룹</th>
+    <th>채팅(팀장)</th>
+    <th>음악</th>
+    <th>인증</th>
+    <th>친구</th>
+    <th>마이페이지</th>
+    <th>그룹</th>
   </tr>
   <tr align="center">
-    <td style="padding: 8px;">김예지</td>
-    <td style="padding: 8px;">박하얀</td>
-    <td style="padding: 8px;">방지혁</td>
-    <td style="padding: 8px;">이다윗</td>
-    <td style="padding: 8px;">허진호</td>
-    <td style="padding: 8px;">황희수</td>
+    <td>김예지</td>
+    <td>박하얀</td>
+    <td>방지혁</td>
+    <td>이다윗</td>
+    <td>허진호</td>
+    <td>황희수</td>
   </tr>
 </table>
 
