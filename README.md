@@ -26,12 +26,12 @@
     <th>그룹</th>
   </tr>
   <tr align="center">
-    <td style="background-color: white;">김예지</td>
-    <td style="background-color: white;">박하얀</td>
-    <td style="background-color: white;">방지혁</td>
-    <td style="background-color: white;">이다윗</td>
-    <td style="background-color: white;">허진호</td>
-    <td style="background-color: white;">황희수</td>
+    <td>김예지</td>
+    <td>박하얀</td>
+    <td>방지혁</td>
+    <td>이다윗</td>
+    <td>허진호</td>
+    <td>황희수</td>
   </tr>
 </table>
 
