@@ -16,14 +16,14 @@
 
 ### 👥 팀원
 
-<table>
+<table style="font-size: 14px;">
   <tr align="center">
-    <th width="100">채팅(팀장)</th>
-    <th width="100">음악</th>
-    <th width="100">인증</th>
-    <th width="100">친구</th>
-    <th width="100">마이페이지</th>
-    <th width="100">그룹</th>
+    <th width="95">채팅(팀장)</th>
+    <th width="95">음악</th>
+    <th width="95">인증</th>
+    <th width="95">친구</th>
+    <th width="95">마이페이지</th>
+    <th width="95">그룹</th>
   </tr>
   <tr align="center">
     <td>김예지</td>
