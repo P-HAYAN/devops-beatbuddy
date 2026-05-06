@@ -5,12 +5,17 @@
 ## 👀 목차
 1. [👥 팀원](#팀원)
 2. [📚 프로젝트 개요](#프로젝트-개요)
-3. [🔧 시스템 아키텍처](#시스템-아키텍처)
-4. [📅 요구사항 명세서](#요구사항-명세서)
-5. [🪧 ERD](#erd)
-6. [🗃️ 테이블 명세서](#테이블-명세서)
-7. [🎯 API 명세서](#api-명세서)
-8. [🧪 테스트 계획 및 결과 보고서](#테스트-계획-및-결과-보고서)
+3. [📑 요구사항 분석](#요구사항-분석)
+4. [🔧 시스템 아키텍처](#시스템-아키텍처)
+5. [📅 요구사항 명세서](#요구사항-명세서)
+6. [🪧 ERD](#erd)
+7. [🗃️ 테이블 명세서](#테이블-명세서)
+8. [🎯 API 명세서](#api-명세서)
+9. [🖥 화면 및 기능 설계서](#화면-및-기능-설계서)
+10. [🧪 테스트 계획 및 결과 보고서](#테스트-계획-및-결과-보고서)
+11. [CI/CD 아키텍처](#CI/CD-아키텍처)
+12. [CI/CD 배포 결과](#CI/CD-배포-결과)
+13. [💬 회고록](#회고록)
 
 ---
 
@@ -47,17 +52,57 @@
 
 ### ✅ 배경: 왜 이 서비스가 필요한가?
 
-**취향 기반 연결의 필요성**
-
+#### 취향 기반 연결의 필요성
 기존 소셜 서비스는 외형이나 조건 중심의 매칭으로 인해 실제 깊이 있는 정서적 교감을 기대하기 어렵고, 이는 곧 대화의 단절과 관계 유지를 위한 심리적 피로감으로 이어집니다.
 
-**음악이 가진 연결의 힘**
-
+#### 음악이 가진 연결의 힘
 음악 취향은 성격, 감성, 라이프스타일과 높은 상관관계를 가집니다. 같은 곡을 좋아한다는 사실만으로도 대화의 물꼬를 트기 쉬워집니다.
 
-**그룹 기반 안전한 만남**
-
+#### 그룹 기반 안전한 만남
 그룹 안에서만 추천이 이루어지므로, 불특정 다수와의 무작위 연결이 아닌 신뢰할 수 있는 환경에서 친구를 사귈 수 있습니다.
+
+---
+
+## 📑 요구사항 분석
+
+<details>
+<summary> 요구사항 분석 </summary>
+
+<br>
+
+### 🎵 1. 음악 취향 분석
+- 최애곡 10곡 선택 (Spotify API 연동)
+- 곡별 음악 특성 수집 (SoundNet API)
+- 16차원 취향 벡터 생성 및 저장
+- 취향 프로필 조회 및 수정
+
+### 👤 2. 사용자 기능
+- 이메일 회원가입 / 로그인 (JWT)
+- 이메일 인증 (Gmail SMTP)
+- 비밀번호 찾기 / 변경
+- 프로필 관리 및 회원탈퇴
+
+### 👥 3. 그룹 기능
+- 그룹 생성
+- 초대 코드 기반 그룹 가입
+- 그룹 내 취향 기반 친구 추천 (코사인 유사도)
+- 추천 프로필 조회 (넘기기 / 친구 신청)
+
+### 🤝 4. 친구 기능
+- 친구 신청 / 수락 / 거절
+- 친구 목록 조회 및 검색
+- 친구 프로필 및 최애곡 확인
+- 친구 삭제
+
+### 💬 5. 채팅
+- 1:1 실시간 채팅 (WebSocket)
+- 채팅방 목록 및 안읽은 메시지 수 표시
+- 채팅방 나가기
+
+### 🔔 6. 알림
+- 친구 신청 / 수락 알림
+
+</details>
 
 ---
 
@@ -95,6 +140,42 @@
 
 ---
 
+## 🖥 화면 및 기능 설계서
+
+> [화면 및 기능 설계서](https://www.figma.com/board/daSTynfA5bNxs7zU00zo6I/flow-chart?t=ePHmKATAdPWGXzb6-1)
+
+<details>
+<summary>회원 관리</summary>
+<img width="4482" height="2642" alt="BeatBuddy 화면설계서 (1)" src="https://github.com/user-attachments/assets/c681f270-19f1-4081-8cd7-a404a28fc52d" />
+</details>
+
+<details>
+<summary>그룹</summary>
+<img width="4482" height="2794" alt="BeatBuddy 화면설계서 (2)" src="https://github.com/user-attachments/assets/272c93a9-c80b-44a8-b915-2b49d9bd7e37" />
+</details>
+
+<details>
+<summary>음악</summary>
+<img width="4490" height="3077" alt="BeatBuddy 화면설계서 (3)" src="https://github.com/user-attachments/assets/9010f5a6-956e-44a4-8c29-872238c08078" />
+</details>
+
+<details>
+<summary>친구</summary>
+<img width="3474" height="2650" alt="BeatBuddy 화면설계서 (4)" src="https://github.com/user-attachments/assets/f9d4605f-c5c7-464b-a614-2b55f7086f1f" />
+</details>
+
+<details>
+<summary>채팅</summary>
+<img width="3474" height="1411" alt="BeatBuddy 화면설계서 (5)" src="https://github.com/user-attachments/assets/aa5284f3-6278-4508-a853-e18171991d07" />
+</details>
+
+<details>
+<summary>마이페이지</summary>
+<img width="3474" height="4465" alt="BeatBuddy 화면설계서 (6)" src="https://github.com/user-attachments/assets/a9fbde85-5a8f-4237-bc21-8a0594b51ea1" />
+</details>
+
+---
+
 ## 🧪 테스트 계획 및 결과 보고서
 
 > 백엔드 - [테스트 계획 및 결과 보고서](https://docs.google.com/spreadsheets/d/1_yQBYho9SeX9E9EfWcyGfwN5yh79QyOxMhvVj6B-Qds/edit?gid=908489767#gid=908489767)
@@ -121,6 +202,7 @@
 | 이메일 | ![Gmail](https://img.shields.io/badge/GmailSMTP-EA4335?style=for-the-badge&logo=gmail&logoColor=white) |
 | 실시간 채팅 | ![WebSocket](https://img.shields.io/badge/WebSocket(STOMP)-010101?style=for-the-badge) |
 | 외부 API | ![Spotify](https://img.shields.io/badge/SpotifyAPI-1DB954?style=for-the-badge&logo=spotify&logoColor=white)&nbsp;![RapidAPI](https://img.shields.io/badge/RapidAPI-0055DA?style=for-the-badge&logo=rapid&logoColor=white) |
+| Infra/DevOps |  |
 
 </details>
 
@@ -146,7 +228,17 @@ Redis 대신 DB 테이블로 구현하되 `ON DUPLICATE KEY UPDATE`를 활용해
 
 ---
 
-### 회고록
+## CI/CD 아키텍처
+
+#### 실행 순서
+
+---
+
+## CI/CD 배포 결과
+
+---
+
+### 💬 회고록
 
 #### 김예지
 > 작성 예정
