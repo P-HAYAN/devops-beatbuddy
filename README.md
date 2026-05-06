@@ -18,12 +18,12 @@
 
 <table>
   <tr align="center">
-    <th width="150">채팅(팀장)</th>
-    <th width="150">음악</th>
-    <th width="150">인증</th>
-    <th width="150">친구</th>
-    <th width="150">마이페이지</th>
-    <th width="150">그룹</th>
+    <th width="100">채팅(팀장)</th>
+    <th width="100">음악</th>
+    <th width="100">인증</th>
+    <th width="100">친구</th>
+    <th width="100">마이페이지</th>
+    <th width="100">그룹</th>
   </tr>
   <tr align="center">
     <td>김예지</td>
