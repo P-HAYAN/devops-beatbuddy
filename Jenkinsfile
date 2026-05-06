@@ -20,16 +20,16 @@ spec:
         - name: docker-config
           mountPath: /kaniko/.docker/
 
-        # kubectl 컨테이너 추가
-        # kubectl 컨테이너는 Docker 이미지 빌드/푸시만 담당하고,
-        # Kubernets 배포 재시작 명령은 kubectl이 필요하므로 별도 컨테이너를 추가
-        - name: kubectl
-          image: alpine/k8s:1.32.0
-          workingDir: /home/jenkins/agent
-            command:
-              - sleep
-            args:
-              - 9999999
+    # kubectl 컨테이너 추가
+    # kubectl 컨테이너는 Docker 이미지 빌드/푸시만 담당하고,
+    # Kubernets 배포 재시작 명령은 kubectl이 필요하므로 별도 컨테이너를 추가
+    - name: kubectl
+      image: alpine/k8s:1.32.0
+      workingDir: /home/jenkins/agent
+        command:
+          - sleep
+        args:
+          - 9999999
 
     volumes:
       - name: docker-config
