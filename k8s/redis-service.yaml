@@ -1,0 +1,11 @@
+# 백엔드가 redis 라는 이름으로 Redis에 접근하게 해주는 Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  selector:
+    app: redis
+  ports:
+    - port: 6379
+      targetPort: 6379

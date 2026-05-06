@@ -1,0 +1,54 @@
+# Spring Boot 서버를 Kubernetes에서 실행
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: beatbuddy-backend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: backend
+
+  template:
+    metadata:
+      labels:
+        app: backend
+
+    spec:
+      containers:
+        - name: backend
+          image: beatbuddy-backend:dev
+
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 8080
+
+          volumeMounts:
+            - name: secret-yml
+              mountPath: /app/application-secret.yml
+              subPath: application-secret.yml
+
+          env:
+            - name: DB_HOST
+              value: "mariadb"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_NAME
+              value: "beatbuddy"
+            - name: DB_USERNAME
+              value: beyond
+            - name: DB_PASSWORD
+              value: beyond
+            - name: REDIS_HOST
+              value: redis
+            - name: REDIS_PORT
+              value: "6379"
+
+      volumes:
+        - name: secret-yml
+          secret:
+            secretName: beatbuddy-secret-yml

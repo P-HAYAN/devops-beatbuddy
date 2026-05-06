@@ -1,0 +1,27 @@
+# Vue + Nginx 프론트를 Kubernetes에서 실행
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: beatbuddy-frontend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: frontend
+
+  template:
+    metadata:
+      labels:
+        app: frontend
+
+    spec:
+      containers:
+        - name: frontend
+          image: beatbuddy-frontend:dev
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 80
