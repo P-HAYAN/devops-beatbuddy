@@ -93,7 +93,7 @@
 ## 🛠️ 기술 스택
 
 <details>
-> <summary> 기술 스택</summary>
+<summary> 기술 스택</summary>
 
 <br>
 
