@@ -82,9 +82,9 @@
 
 ## 🧪 테스트 계획 및 결과 보고서
 
-> [테스트 계획 및 결과 보고서]-백엔드(https://docs.google.com/spreadsheets/d/1_yQBYho9SeX9E9EfWcyGfwN5yh79QyOxMhvVj6B-Qds/edit?gid=908489767#gid=908489767)
+> 백엔드 - [테스트 계획 및 결과 보고서](https://docs.google.com/spreadsheets/d/1_yQBYho9SeX9E9EfWcyGfwN5yh79QyOxMhvVj6B-Qds/edit?gid=908489767#gid=908489767)
 >
-> [테스트 계획 및 결과 보고서]-프론트엔드(https://docs.google.com/spreadsheets/d/1_pKygK3_dZ3CGeiM8Y9sOOe0t-kFvco2/edit?gid=424294998#gid=424294998)
+> 프론트엔드 - [테스트 계획 및 결과 보고서](https://docs.google.com/spreadsheets/d/1_pKygK3_dZ3CGeiM8Y9sOOe0t-kFvco2/edit?gid=424294998#gid=424294998)
 
 
 ---
