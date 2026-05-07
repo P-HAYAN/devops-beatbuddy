@@ -13,8 +13,8 @@
 8. [🎯 API 명세서](#api-명세서)
 9. [🖥 화면 및 기능 설계서](#화면-및-기능-설계서)
 10. [🧪 테스트 계획 및 결과 보고서](#테스트-계획-및-결과-보고서)
-11. [CI/CD 아키텍처](#CI/CD-아키텍처)
-12. [CI/CD 배포 결과](#CI/CD-배포-결과)
+11. [⚙️ CI/CD 구조](#CI/CD-구조)
+12. [🚀 CI/CD 배포 결과](#CI/CD-배포-결과)
 13. [💬 회고록](#회고록)
 
 ---
@@ -67,8 +67,6 @@
 
 <details>
 <summary> 요구사항 분석 </summary>
-
-<br>
 
 ### 🎵 1. 음악 취향 분석
 - 최애곡 10곡 선택 (Spotify API 연동)
@@ -182,7 +180,6 @@
 >
 > 프론트엔드 - [테스트 계획 및 결과 보고서](https://docs.google.com/spreadsheets/d/1_pKygK3_dZ3CGeiM8Y9sOOe0t-kFvco2/edit?gid=424294998#gid=424294998)
 
-
 ---
 
 ## 🛠️ 기술 스택
@@ -213,49 +210,63 @@
 <details>
 <summary> 주요 기술적 의사결정 </summary>
 
-<br>
-
-**취향 벡터 설계**
+#### 취향 벡터 설계
 단순 평균이 아닌 평균 + 표준편차를 함께 저장하는 16차원 벡터를 설계했습니다. 표준편차를 포함함으로써 "취향의 폭"까지 반영할 수 있어 매칭 정확도를 높였습니다.
 
-**viewed_profiles 설계**
+#### viewed_profiles 설계
 Redis 대신 DB 테이블로 구현하되 `ON DUPLICATE KEY UPDATE`를 활용해 넘긴 프로필을 30일 후 재노출하는 로직을 구현했습니다. MVP 이후 Redis로의 교체를 고려한 구조입니다.
 
-**채팅방 중복 방지**
+#### 채팅방 중복 방지
 `user_a_id < user_b_id` CHECK 제약 조건과 UNIQUE KEY를 조합해 두 사용자 간 채팅방이 중복 생성되는 것을 DB 레벨에서 원천 차단했습니다.
 
 </details>
 
 ---
 
-## CI/CD 아키텍처
+## ⚙️ CI/CD 구조
+<details>
+<summary>아키텍처</summary>
+</details>
 
-#### 실행 순서
+<details>
+<summary>빌드 구성</summary>
+  <img width="1201" height="651" alt="beatbuddy-build-pipeline (1) drawio (5)" src="https://github.com/user-attachments/assets/0b7ee82e-4e86-4b0c-8cae-344970ce7f1b" />
+</details>
 
 ---
 
-## CI/CD 배포 결과
+## 🚀 CI/CD 배포 결과
+
+<details>
+  <summary></summary>
+</details>
+<details>
+  <summary></summary>
+</details>
+<details>
+  <summary></summary>
+</details>
 
 ---
 
 ### 💬 회고록
 
 #### 김예지
-> 작성 예정
+> _
 
 #### 박하얀
-> 작성 예정
+> _
 
 #### 방지혁
-> 작성 예정
+> _
 
 #### 이다윗
-> 작성 예정
+> _
 
 #### 허진호
-> 작성 예정
+> _
 
 #### 황희수
-> 작성 예정
+> _
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=20&height=100&section=footer)
