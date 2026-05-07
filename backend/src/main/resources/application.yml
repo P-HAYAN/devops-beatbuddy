@@ -6,14 +6,16 @@ spring:
     name: beatbuddy
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/beatbuddy
+    # url: jdbc:mariadb://localhost:3306/beatbuddy
+    url: jdbc:mariadb://db:3306/beatbuddy
     username: beyond
-    password: beyond
+    password: ${DB_PASSWORD}
   data:
     redis:
-      host: localhost
+      # host: localhost
+      host: redis
       username: default
-      password: beyond
+      password: ${REDIS_PASSWORD}
       port: 6379
   servlet:
     multipart:
@@ -22,14 +24,16 @@ spring:
   mail:
     default-encoding: UTF-8
     host: smtp.gmail.com
-    port: 587
-    username: ${spring.mail.username}
-    password: ${spring.mail.password}
+    # port: 587
+    port: 465
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
     properties:
       mail.smtp.auth: true
+      mail.smtp.ssl.enable: true
       mail.smtp.starttls.enable: true
   config:
-    import: optional:file:/app/application-secret.yml
+    import: "optional:application-secret.yml"
 
 mybatis:
   type-aliases-package: com.beyond.beatbuddy.*.entity, com.beyond.beatbuddy.global.entity
@@ -50,13 +54,14 @@ file:
   default-profile: /default-profile.jpg
   default-group: /default-group.jpg
 
-spotify:
-  client-id: ${spotify.client-id}
-  client-secret: ${spotify.client-secret}
-
 app:
   group:
     default-image-url: https://cdn-icons-png.flaticon.com/512/82/82750.png
 
 rapidapi:
   track-analysis-host: track-analysis.p.rapidapi.com
+
+logging:
+  level:
+    org.springframework.mail: DEBUG
+    com.sun.mail: DEBUG
