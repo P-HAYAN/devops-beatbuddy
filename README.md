@@ -13,9 +13,12 @@
 8. [🎯 API 명세서](#-api-명세서)
 9. [🖥 화면 및 기능 설계서](#-화면-및-기능-설계서)
 10. [🧪 테스트 계획 및 결과 보고서](#-테스트-계획-및-결과-보고서)
-11. [⚙️ CI/CD 구조](#%EF%B8%8F-cicd-구조)
-12. [🚀 CI/CD 배포 결과](#-cicd-배포-결과)
-13. [💬 회고록](#-회고록)
+11. [🛠️ 기술 스택](#-기술-스택)
+12. [📌 주요 기술적 의사결정](#-주요-기술적-의사결정)
+13. [⚙️ CI/CD 구조 및 스크립트](#%EF%B8%8F-cicd-구조-및-스크립트)
+14. [🚀 CI/CD 배포 결과](#-cicd-배포-결과)
+15. [📽️ 주요 기능 시연 영상](#%EF%B8%8F-주요-기능-시연-영상)
+16. [💬 회고록](#-회고록)
 
 ---
 
@@ -25,18 +28,22 @@
   <tr align="center">
     <th>채팅(팀장)</th>
     <th>음악</th>
-    <th>인증</th>
     <th>친구</th>
-    <th>마이페이지</th>
     <th>그룹</th>
   </tr>
+
+  <tr>
+    <td align="center"><img width="120" height="180" alt="김예지" src="./introduce/yeazi_1.png" /></td>
+    <td align="center"><img width="120" height="180" alt="박하얀" src="./introduce/hayan.png" /></td>   
+    <td align="center"><img width="120" height="180" alt="이다윗" src="./introduce/leedawit.png" /></td>   
+    <td align="center"><img width="120" height="180" alt="황희수" src="./introduce/huisu.png" /></td>
+  </tr>
+  
   <tr align="center">
-    <td>김예지</td>
-    <td>박하얀</td>
-    <td>방지혁</td>
-    <td>이다윗</td>
-    <td>허진호</td>
-    <td>황희수</td>
+    <th>김예지</th>
+    <th>박하얀</th>
+    <th>이다윗</th>
+    <th>황희수</th>
   </tr>
 </table>
 
@@ -199,7 +206,7 @@
 | 이메일 | ![Gmail](https://img.shields.io/badge/GmailSMTP-EA4335?style=for-the-badge&logo=gmail&logoColor=white) |
 | 실시간 채팅 | ![WebSocket](https://img.shields.io/badge/WebSocket(STOMP)-010101?style=for-the-badge) |
 | 외부 API | ![Spotify](https://img.shields.io/badge/SpotifyAPI-1DB954?style=for-the-badge&logo=spotify&logoColor=white)&nbsp;![RapidAPI](https://img.shields.io/badge/RapidAPI-0055DA?style=for-the-badge&logo=rapid&logoColor=white) |
-| Infra/DevOps | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)&nbsp;![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)&nbsp;![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white) |
+| Infra/DevOps | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)&nbsp;![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)&nbsp;![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)&nbsp;![Docker Hub](https://img.shields.io/badge/Docker%20Hub-0db7ed?style=for-the-badge&logo=docker&logoColor=white)&nbsp;<img src="https://img.shields.io/badge/Argo%20CD-FE6A16?style=for-the-badge&logo=argo&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"> |
 
 </details>
 
@@ -223,7 +230,7 @@ Redis 대신 DB 테이블로 구현하되 `ON DUPLICATE KEY UPDATE`를 활용해
 
 ---
 
-## ⚙️ CI/CD 구조
+## ⚙️ CI/CD 구조 및 스크립트
 <details>
 <summary>아키텍처</summary>
   <img width="4988" height="3084" alt="beatbuddy-service-architecture (4)" src="https://github.com/user-attachments/assets/b9b16887-47bf-429e-a367-9ca11b20bcc3" />
@@ -231,7 +238,7 @@ Redis 대신 DB 테이블로 구현하되 `ON DUPLICATE KEY UPDATE`를 활용해
 
 <details>
 <summary>빌드 구성</summary>
-  <img width="1201" height="651" alt="beatbuddy-build-pipeline (1) drawio (5)" src="https://github.com/user-attachments/assets/0b7ee82e-4e86-4b0c-8cae-344970ce7f1b" />
+  <img width="4804" height="2604" alt="beatbuddy-build-pipeline (1) (1)" src="https://github.com/user-attachments/assets/62d63a60-d910-4076-a987-ad47390bba84" />
 </details>
 
 <details>
@@ -444,14 +451,23 @@ pipeline {
 
 ## 🚀 CI/CD 배포 결과
 
+<details>
+  <summary>BACKEND CI/CD</summary>
+
+  https://github.com/user-attachments/assets/c7914280-0a82-4a04-8f20-cd8c6a1fd62b
+</details>
+
+<details>
+  <summary>FRONTEND CI/CD</summary>
+
+  https://github.com/user-attachments/assets/2b549b54-6434-4f0b-929f-11991a0fa4dc
+</details>
+
 ---
 
 ## 📽️ 주요 기능 시연 영상
 
-<details>
-  <summary>주요 기능 시연 영상</summary>
-  https://github.com/user-attachments/assets/db7087dd-5fd0-4903-8be5-49fc0aee5cd4
-</details>
+> [주요 기능 시연 영상](https://github.com/user-attachments/assets/db7087dd-5fd0-4903-8be5-49fc0aee5cd4)
 
 ---
 
@@ -463,13 +479,7 @@ pipeline {
 #### 박하얀
 > _
 
-#### 방지혁
-> _
-
 #### 이다윗
-> _
-
-#### 허진호
 > _
 
 #### 황희수
